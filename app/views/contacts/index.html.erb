@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+<p><%= notice %></p>
+
+<h1>ブログ一覧</h1>
+
+<!-- DBのテーブルデフォルトとしてidを持っている-->
+
+<% @contacts.each do |contact| %>
+<div class="row">
+  <p>名前:<%= contact.name %></p>
+  <p>メール:<%= contact.email %></p>
+  <p>コンテンツ:<%= contact.content %></p>
+  <!-- link toを使用する時は必ず_pathがつく(例外もあるが今はそのように覚える)-->
+  <%= link_to "ブログを編集する", edit_contact_path(contact.id), data: { confirm: '本当に編集していいですか？' } %>
+  <%= link_to "ブログを削除する", contact_path(contact.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %>
+  </div>
+<% end %>
+<br>
+<%= link_to "ブログを作成する", new_contact_path %>
+  </div>
+</div>

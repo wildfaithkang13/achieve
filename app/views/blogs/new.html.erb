@@ -1,0 +1,20 @@
+<div class="container">
+    <!--<div class="wrapper col-md-8 col-md-offset-2 col-sm-10">-->
+        <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+        <h2>ブログを作成する</h2>
+
+<!--render = 部分テンプレート 
+#newとedit共通化させるための方法
+#外部のhtml.rbを呼び出す
+#＿がついているのが部分テンプレート
+#_form.html.erbが取り込まれる
+#対処方法は2通り
+#1 以下のform_for文を削除する
+#2 renderを削除する-->
+<!--この点に注意しないと入力フォームが2つ表示されるというバグが発生する-->
+
+            <%= render 'form' %>
+
+        <p id="notice"><%= notice %></p>
+    </div>
+</div>
