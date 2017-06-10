@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_blog, only: [:edit, :update, :destroy]
   
   def index #呼び出されるのはindex.html.erb
@@ -31,7 +32,7 @@ class BlogsController < ApplicationController
   #saveメソッドが使えない。入力したものを保存したいので入力情報を取得しなければいけない
   #必要な情報を取得するためのメソッドblogs_paramsを呼び出して結果を@blogに代入する
   @blog = Blog.new(blogs_params) 
-  
+  @blog.user_id = current_user.id
     if @blog.save
       # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
       redirect_to blogs_path, notice: "ブログを作成しました！"
