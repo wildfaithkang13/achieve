@@ -33,6 +33,7 @@ class BlogsController < ApplicationController
   #必要な情報を取得するためのメソッドblogs_paramsを呼び出して結果を@blogに代入する
   @blog = Blog.new(blogs_params) 
   @blog.user_id = current_user.id
+  @blog.name = current_user.name
     if @blog.save
       # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
       redirect_to blogs_path, notice: "ブログを作成しました！"

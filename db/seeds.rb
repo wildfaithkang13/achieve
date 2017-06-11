@@ -22,7 +22,8 @@ while n <= 100
   Blog.create(
     title: "あああ",
     content: "hoge",
-    user_id: n
+    user_id: n,
+    name: (0...8).map{ ('A'..'Z').to_a[rand(26)] }.join
   )
   n = n + 1
 end
