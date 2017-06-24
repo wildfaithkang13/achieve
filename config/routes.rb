@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   #routerの役割メモ
   #HTTPリクエストのメソッドのURLと種類で判別する
   #GET =>ユーザーからのURLを入力してアクセスするとGETメソッド
@@ -85,5 +86,9 @@ Rails.application.routes.draw do
   #root 'コントローラ名#アクション名'とすることでルート・ディレクトリで
   #どのアクションを実行するかを設定することができます。
   root 'top#index'
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
   
 end
