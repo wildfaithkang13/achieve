@@ -56,3 +56,5 @@ gem 'devise'
 
 #テストレコードを大量に作成する
 gem 'faker'
+
+gem 'rails_12factor', group: :production
