@@ -31,11 +31,7 @@ class BlogsController < ApplicationController
   #saveメソッドはmodelに対して命令をしているメソッド。そのためblogモデルを生成しないと
   #saveメソッドが使えない。入力したものを保存したいので入力情報を取得しなければいけない
   #必要な情報を取得するためのメソッドblogs_paramsを呼び出して結果を@blogに代入する
-<<<<<<< HEAD
   @blog = Blog.new(blogs_params)
-=======
-  @blog = Blog.new(blogs_params) 
->>>>>>> 86c0d6a2f261c85091f30297c2b2b23311003ea3
   @blog.user_id = current_user.id
   @blog.name = current_user.name
     if @blog.save

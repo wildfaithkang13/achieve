@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170624092128) do
-=======
-ActiveRecord::Schema.define(version: 20170611035441) do
->>>>>>> 86c0d6a2f261c85091f30297c2b2b23311003ea3
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +47,6 @@ ActiveRecord::Schema.define(version: 20170611035441) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
-<<<<<<< HEAD
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -59,10 +54,6 @@ ActiveRecord::Schema.define(version: 20170611035441) do
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
-=======
-  end
-
->>>>>>> 86c0d6a2f261c85091f30297c2b2b23311003ea3
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 

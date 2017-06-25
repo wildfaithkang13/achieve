@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  
-=======
->>>>>>> 86c0d6a2f261c85091f30297c2b2b23311003ea3
   devise_for :users
   #routerの役割メモ
   #HTTPリクエストのメソッドのURLと種類で判別する
@@ -17,7 +13,7 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
-  
+
 
   #rubyのコーディングルールとしてコントローラ名の複数形で記述すること
   # resources :コントローラ名s
@@ -30,7 +26,7 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
-    
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -85,7 +81,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  
+
   #root 'コントローラ名#アクション名'とすることでルート・ディレクトリで
   #どのアクションを実行するかを設定することができます。
   root 'top#index'
@@ -93,5 +89,5 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
-  
+
 end

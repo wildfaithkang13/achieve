@@ -53,11 +53,7 @@ GEM
     coffee-script-source (1.12.2)
     commonjs (0.2.7)
     concurrent-ruby (1.0.5)
-<<<<<<< HEAD
     debug_inspector (0.0.3)
-=======
-    debug_inspector (0.0.2)
->>>>>>> 86c0d6a2f261c85091f30297c2b2b23311003ea3
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -107,20 +103,12 @@ GEM
     mini_portile2 (2.2.0)
     minitest (5.10.2)
     multi_json (1.12.1)
-<<<<<<< HEAD
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
     orm_adapter (0.5.0)
     pg (0.21.0)
     public_suffix (2.0.5)
     rack (1.6.8)
-=======
-    nokogiri (1.7.1)
-      mini_portile2 (~> 2.1.0)
-    orm_adapter (0.5.0)
-    pg (0.20.0)
-    rack (1.6.5)
->>>>>>> 86c0d6a2f261c85091f30297c2b2b23311003ea3
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.3)
@@ -157,11 +145,7 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-<<<<<<< HEAD
     sass (3.4.24)
-=======
-    sass (3.4.23)
->>>>>>> 86c0d6a2f261c85091f30297c2b2b23311003ea3
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
       sass (~> 3.1)
