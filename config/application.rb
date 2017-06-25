@@ -7,15 +7,16 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module Achieve
-  class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+	class Application < Rails::Application
+		# Settings in config/environments/* take precedence over those specified here.
+		# Application configuration should go into files in config/initializers
+		# -- all .rb files in that directory are automatically loaded.
 
-    # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
-    # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
+		# Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
+		# Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
+		# config.time_zone = 'Central Time (US & Canada)'
 
+<<<<<<< HEAD
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
@@ -26,4 +27,16 @@ module Achieve
 
     config.action_view.field_error_proc = proc { |html_tag, instance| html_tag }
   end
+=======
+		# The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+		# config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+		# config.i18n.default_locale = :de
+		config.i18n.default_locale = :ja
+
+		# Do not swallow errors in after_commit/after_rollback callbacks.
+		config.active_record.raise_in_transactional_callbacks = true
+		
+		config.action_view.field_error_proc = proc { |html_tag, instance| html_tag }
+	end
+>>>>>>> 86c0d6a2f261c85091f30297c2b2b23311003ea3
 end

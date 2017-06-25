@@ -2,7 +2,11 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 86c0d6a2f261c85091f30297c2b2b23311003ea3
   # before_actionで下で定義したメソッドを実行
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -10,7 +14,10 @@ class ApplicationController < ActionController::Base
   PERMISSIBLE_ATTRIBUTES = %i(name)
 
   protected
+<<<<<<< HEAD
 
+=======
+>>>>>>> 86c0d6a2f261c85091f30297c2b2b23311003ea3
     #deviseのストロングパラメーターにカラム追加するメソッドを定義
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)

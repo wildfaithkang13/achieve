@@ -33,6 +33,7 @@
             <li><%= link_to "ブログ", blogs_path %></li>
           </ul>
         </li>
+<<<<<<< HEAD
         <% if user_signed_in? %>
           <li><%= link_to 'マイページ', edit_user_registration_path %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
@@ -40,6 +41,15 @@
           <li><%= link_to 'ログイン', new_user_session_path %></li>
           <li><%= link_to 'サインアップ', new_user_registration_path %></li>
         <% end %>
+=======
+          <% if user_signed_in? %>
+            <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'ログイン', new_user_session_path %></li>
+            <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+          <% end %>
+>>>>>>> 86c0d6a2f261c85091f30297c2b2b23311003ea3
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

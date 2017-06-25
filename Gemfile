@@ -52,9 +52,17 @@ gem 'twitter-bootstrap-rails'
 
 gem 'jquery-turbolinks'
 
+<<<<<<< HEAD
 gem 'devise'
 
 #テストレコードを大量に作成する
 gem 'faker'
 
 gem 'rails_12factor', group: :production
+=======
+gem 'rails_12factor', group: :production
+
+gem 'devise'
+
+gem 'faker'
+>>>>>>> 86c0d6a2f261c85091f30297c2b2b23311003ea3

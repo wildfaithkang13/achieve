@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   
+=======
+>>>>>>> 86c0d6a2f261c85091f30297c2b2b23311003ea3
   devise_for :users
   #routerの役割メモ
   #HTTPリクエストのメソッドのURLと種類で判別する
