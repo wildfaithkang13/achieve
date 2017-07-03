@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   #routerの役割メモ
   #HTTPリクエストのメソッドのURLと種類で判別する

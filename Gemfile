@@ -59,3 +59,7 @@ gem 'faker'
 gem 'rails_12factor', group: :production
 
 gem 'execjs'
+
+gem 'rails_admin'
+
+gem 'cancan'
