@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
   before_action :authenticate_user!
+  #コントローラーを呼び出した時にbefore_actionが実行される
+  #edit,updateとdestroyの時に実行される
   before_action :set_blog, only: [:edit, :update, :destroy]
 
   def index #呼び出されるのはindex.html.erb
@@ -52,7 +54,6 @@ class BlogsController < ApplicationController
 
   def update
     # edit, update, destroyで共通コード
-    @blog = Blog.find(params[:id])
     if @blog.update(blogs_params)
       redirect_to blogs_path, notice: "ブログを更新しました！"
     else
@@ -61,7 +62,6 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    @blog = Blog.find(params[:id])
     @blog.destroy
     redirect_to blogs_path, notice: "ブログを削除しました！"
   end
