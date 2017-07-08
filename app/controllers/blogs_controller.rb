@@ -6,6 +6,7 @@ class BlogsController < ApplicationController
 
   def index #呼び出されるのはindex.html.erb
     @blogs = Blog.all
+    render json: @blogs
   end
 
   def new #呼び出されるのはnew.html.erb
