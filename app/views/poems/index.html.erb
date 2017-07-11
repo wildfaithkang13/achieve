@@ -1,0 +1,17 @@
+<!--<#% @poems.each do |poem| %>-->
+  <br><table border align="center">
+    <tr bgcolor="green">
+      <th><font color="white">No.</font></th>
+      <th><font color="white">タイトル</font></th>
+      <th><font color="white">コンテンツ</font></th>
+      <th><font color="white">詳細</font></th>
+    </tr>
+    <% @poems.each_with_index do |poem, i| %>
+    <tr>
+      <td><%= i + 1 %></td>
+      <td><%= poem.title %></a></td>
+      <td><%= poem.content %></td>
+      <td><%= link_to 'Show', poem %></td>
+    </tr>
+    <% end %>
+  </table>
