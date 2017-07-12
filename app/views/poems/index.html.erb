@@ -13,4 +13,9 @@
       <td><%= link_to 'Show', poem %></td>
     </tr>
     <% end %>
-  </table>
+  </table>-->
+
+  <% @poems.each do |poem| %>
+    <%= poem.title %>
+    <%= poem.content %>
+  <% end %>
