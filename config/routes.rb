@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  #devise_for :users, controllers: {
+    #omniauth_callbacks: "users/omniauth_callbacks"
+  #}
   devise_for :users
   #routerの役割メモ
   #HTTPリクエストのメソッドのURLと種類で判別する
@@ -28,7 +31,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :poems, only: [:index, :edit, :show] 
+  resources :poems, only: [:index, :edit, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
