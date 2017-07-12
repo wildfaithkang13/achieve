@@ -6,12 +6,12 @@ class PoemsController < ApplicationController
   end
 
   def show
-    render json: @poem
     #JSONのデータをパースする場合は以下のようにする
     #respond_to do |format|
       #format.html
       #format.json { render json: @poem } # jsonを指定した場合、jsonフォーマットで返す
     #end
+    render json: @poem
   end
 
   private
