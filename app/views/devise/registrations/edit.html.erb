@@ -2,11 +2,6 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-
-  <div id="page-top-btn" class="page-top-btn">
-    <p><a class="move-page-top" id="move-page-top">▲</a></p>
-</div>
-
   <div class="field">
     <%= f.label :メールアドレス %><br/>
     <%= f.email_field :email, autofocus: true, class: "form-control" %>
@@ -58,4 +53,4 @@
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back %><br><br><br><br><br><br>
