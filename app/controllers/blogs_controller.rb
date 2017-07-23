@@ -2,10 +2,19 @@ class BlogsController < ApplicationController
   before_action :authenticate_user!
   #コントローラーを呼び出した時にbefore_actionが実行される
   #edit,updateとdestroyの時に実行される
-  before_action :set_blog, only: [:edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   def index #呼び出されるのはindex.html.erb
     @blogs = Blog.all
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def show
+    @comment = @blog.comments.build
+    @comments = @blog.comments
   end
 
   def new #呼び出されるのはnew.html.erb
@@ -20,8 +29,6 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blogs_params)
     render :new if @blog.invalid?
   end
-
-
 
   def create #呼び出されるのはcreate.html.erb
   #アクションが切り替わるとインスタンス変数はリセット(初期化)される
