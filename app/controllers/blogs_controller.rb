@@ -54,8 +54,6 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    #findメソッドはidを引数にとって特定のレコードを取得する
-    #@blog = Blog.find(params[:id])
   end
 
 
