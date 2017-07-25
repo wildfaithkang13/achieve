@@ -3,8 +3,7 @@
     <% unless comment.id.nil? %>
       <li>
         <div id="delete_comment">
-
-
+        </div>
         <p class="left"><%= comment.user.name %>さんがコメントしました。</p>
         <p class="left"><%= comment.content %></p>
         <% if current_user.id == comment.user.id %>
@@ -13,7 +12,6 @@
             <%= link_to '', blog_comment_path(blog, comment), class: "fa fa-trash-o fa-lg", method: :delete, remote: true, data: { confirm: '本当に削除していいですか？' } %>
           </p>
         <% end %>
-        </div>
       </li>
     <% end %>
   <% end %>
