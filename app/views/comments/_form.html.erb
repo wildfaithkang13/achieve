@@ -1,5 +1,4 @@
 <!-- コメント入力画面-->
-<p><%= notice %></p>
 <%= form_for([blog,comment], remote: true) do |f| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">

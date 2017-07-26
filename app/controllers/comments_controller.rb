@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
       if @comment.save
         #format.htmlは非同期通信ができてない時に呼び出される
         format.html { redirect_to blog_path(@blog), notice: 'コメントを投稿しました。' }
-        flash.now[:destroy] = "コメントを投稿しました！"
+        flash.now[:message] = "コメントを投稿しました！"
         format.js { render :index  }
       else
         format.html { render :new }
@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
   #_をつけたファイルは共通部品。呼び出す時はrenderを使う
   def destroy
     @comment.destroy
-    flash.now[:destroy] = "コメントを削除しました！"
+    flash.now[:message] = "コメントを削除しました！"
     #renderで非同期通信となる
     render 'index'
   end
