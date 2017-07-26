@@ -2,8 +2,6 @@
   <% comments.each do |comment| %>
     <% unless comment.id.nil? %>
       <li>
-        <div id="delete_comment">
-        </div>
         <p class="left"><%= comment.user.name %>さんがコメントしました。</p>
         <p class="left"><%= comment.content %></p>
         <% if current_user.id == comment.user.id %>
