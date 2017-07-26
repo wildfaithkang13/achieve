@@ -7,8 +7,10 @@ class CommentsController < ApplicationController
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
+        #format.htmlは非同期通信ができてない時に呼び出される
         format.html { redirect_to blog_path(@blog), notice: 'コメントを投稿しました。' }
-        format.js { render :index }
+        flash.now[:destroy] = "コメントを投稿しました！"
+        format.js { render :index  }
       else
         format.html { render :new }
       end
