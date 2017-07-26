@@ -34,7 +34,9 @@ class CommentsController < ApplicationController
   #_をつけたファイルは共通部品。呼び出す時はrenderを使う
   def destroy
     @comment.destroy
-    redirect_to blog_path(@comment.blog), notice: "コメントを削除しました！"
+    flash.now[:destroy] = "コメントを削除しました！"
+    #renderで非同期通信となる
+    render 'index'
   end
   private
     def comment_params

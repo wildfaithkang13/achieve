@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: {
     registrations: "users/registrations",
@@ -29,7 +33,9 @@ Rails.application.routes.draw do
   end
 
   resources :poems, only: [:index, :edit, :show]
-
+  resources :users, only: [:index]
+  resources :relationships, only: [:create, :destroy]
+  
   #root 'コントローラ名#アクション名'とすることでルート・ディレクトリで
   #どのアクションを実行するかを設定することができます。
   root 'top#index'

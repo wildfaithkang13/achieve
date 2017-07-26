@@ -12,6 +12,7 @@
       </p>
     </div>
     <p>コメント一覧</p>
+    <!-- ここにcommentsの_index.html.erbを割り込むイメージ-->
     <div id="comments_area">
       <%= render partial: 'comments/index', locals: { comments: @comments, blog: @blog } %>
     </div>

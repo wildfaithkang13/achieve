@@ -1,4 +1,7 @@
 <ul>
+  <% if flash[:destroy] %>
+    <p><%= flash[:destroy] %></p>
+    <% end %>
   <% comments.each do |comment| %>
     <% unless comment.id.nil? %>
       <li>
