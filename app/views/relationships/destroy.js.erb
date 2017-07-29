@@ -1,2 +1,1 @@
-//$("id名"　+ オプション).htmlメソッド (メソッドの実行内容)
 $("#follow_form_"+"<%= @user.id %>").html("<%= escape_javascript(render partial: 'users/follow_form', locals: { user: @user } ) %>")
