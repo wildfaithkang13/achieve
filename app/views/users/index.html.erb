@@ -9,7 +9,7 @@
                 <h4 class="card-title"><%= user.email %></h4>
                 <%= render 'follow_form', user: user %>
               </div>
-          </div><br>
+          </div>
         </div>
       </div>
 
@@ -19,9 +19,9 @@
             <%= link_to user.name, user %>
             <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
           </div>
-          <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %>
+          <%= render partial: 'follow_form', locals: { user: user } if signed_in? %>
         </li>
       <% end %>
-  <% end %>
+<% end %>
 </div>
 <%= link_to "トップ画面にもどる", root_path %>
