@@ -3,7 +3,9 @@
   <% @users.each do |user| %>
       <div class="container-child col-md-4 col-sm-6 col-xs-6 ">
         <div class="container-fluid bg-info"><br>
-          <div class="card">
+          <!--<div class="card">-->
+          <div class="card-group">
+            <div class="card">
             <%= link_to profile_img(user), user_path(user),:class => "card-img-top", :alt => "Card image cap" %>
               <div class="card-block">
                 <h4 class="card-title"><%= user.email %></h4>
@@ -15,6 +17,7 @@
                     <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %>
                 <% end %>
               </div><br>
+            </div>
           </div><br>
         </div>
       </div>
