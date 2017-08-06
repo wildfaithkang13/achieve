@@ -1,4 +1,4 @@
-class MessagesController < ApplicationController
+class ConversationsController < ApplicationController
   def index
     @users = User.all
     @conversations = Conversation.all
