@@ -1,65 +1,23 @@
-<div class="navbar-wrapper">
-	    <div id="home" class="header">
-	    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        	<div class="carousel-inner">
-	          <div class="item active">
-			    	<div class="container">
-              <% str = "slide" %>
-              <% num = 1 %>
-              <% sum = str + num.to_s%>
-            <!-- ここから -->
-            <!--<% @users.each_slice(3) do |slice| %>-->
-            <% @users.each_slice(3).with_index do |slice, i| %>
-                <h1><%= i + 1 %></h1>
-              <% slice.each do |user| %>
-              <!--<div id="slide1" class="masonry">-->
-              <div id="<%= sum %>" class="masonry">
-						    <div class="post-box col-lg-4 col-md-4 col-sm-4">
-                  <%= link_to profile_img(user), user_path(user) %>
-						    </div>
-						</div>
-            <% end %>
-            <% end %>
-            <% end %>
-            <!-- ここまで -->
-					</div>
-				</div>
+<div class="container">
+  <h2>ユーザー</h2>
+  <% @users.each do |user| %>
+      <div class="container-child col-md-4 col-sm-6 col-xs-6 ">
+        <div class="container-fluid bg-info"><br>
+          <div class="gallery">
+            <%= link_to profile_img(user), user_path(user),:class => "card-img-top", :alt => "Card image cap" %>
 
-        <!--
-				<div class="item">
-					<div class="container">
-						<div id="slide2" class="masonry">
-						    <div class="post-box2 col-lg-4 col-md-4 col-sm-4">
-						    	<img class="img-responsive img-thumbnail" src="http://s3.amazonaws.com/s3.babblin.gs/posts/images/000/000/241/large/OoRsR42.gif">
-						    </div>
-						    <div class="post-box2 col-lg-4 col-md-4 col-sm-4">
-						    	<img class="img-responsive img-thumbnail" src="http://i.imgur.com/FaIH0Zz.jpg">
-						    </div>
-						    <div class="post-box2 col-lg-4 col-md-4 col-sm-4">
-						    	<img class="img-responsive img-thumbnail" src="http://i.imgur.com/3CjBFlN.jpg">
-						    </div>
-						</div>
-					</div>
-				</div>
-        -->
-        <!--
-				<div class="item">
-					<div class="container">
-						<div id="slide3" class="masonry">
-						    <div class="post-box3 col-lg-4 col-md-4 col-sm-4">
-						    	<img class="img-responsive img-thumbnail" src="http://i.imgur.com/A829mb4.jpg">
-						    </div>
-						    <div class="post-box3 col-lg-4 col-md-4 col-sm-4">
-						    	<img class="img-responsive img-thumbnail" src="http://tiaurus.info/wp-content/uploads/2012/08/yarkoe-i-sochnoe-gipperrealistichnoe-iskusstvo-dennis-wojtkiewicz-3.jpg?76b437">
-						    </div>
-						    <div class="post-box3 col-lg-4 col-md-4 col-sm-4">
-						    	<img class="img-responsive img-thumbnail" src="http://i.imgur.com/vsHUzpH.jpg">
-						    </div>
-						</div>
-					</div>
-				</div>
-      -->
+                <h4 class="card-title"><%= user.email %></h4>
+                <% if user.id != current_user.id %>
+                    <div class="item">
+                      <%= link_to user.name, user %>
+                      <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+                    </div>
+                    <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %>
+                <% end %>
 
-			</div>
-		</div>
-		</div>
+          </div>
+        </div>
+      </div>
+ <% end %>
+</div>
+<%= link_to "トップ画面にもどる", root_path %>
