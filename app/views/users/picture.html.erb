@@ -4,26 +4,20 @@
         	<div class="carousel-inner">
 	          <div class="item active">
 			    	<div class="container">
-              <% str = "slide" %>
-              <% num = 1 %>
-              <% sum = str + num.to_s%>
-            <!-- ここから -->
-            <% @users.each_slice(3) do |slice| %>
-						<!--<div id="slide1" class="masonry">-->
-              <% slice.each do |user| %>
-              <div id="<%= sum %>" class="masonry">
+						<div id="slide1" class="masonry">
 						    <div class="post-box col-lg-4 col-md-4 col-sm-4">
-						    	<!--<img class="img-responsive img-thumbnail" src="http://i.imgur.com/ylMPudK.gif">-->
-                  <h1>あああ</h1>
+						    	<img class="img-responsive img-thumbnail" src="http://i.imgur.com/ylMPudK.gif">
+						    </div>
+						    <div class="post-box col-lg-4 col-md-4 col-sm-4">
+						    	<img class="img-responsive img-thumbnail" src="http://i.imgur.com/kToRhVC.jpg">
+						    </div>
+						    <div class="post-box col-lg-4 col-md-4 col-sm-4">
+						    	<img class="img-responsive img-thumbnail" src="http://4.bp.blogspot.com/-xt6GuKpm6fI/Ul65xMBi5CI/AAAAAAAAEK4/cmmpD4OQsec/s1600/windmill_amsterdam_hermit_crab_shell.jpg">
 						    </div>
 						</div>
-            <% end %>
-            <% end %>
-            <!-- ここまで -->
 					</div>
 				</div>
 
-        <!--
 				<div class="item">
 					<div class="container">
 						<div id="slide2" class="masonry">
@@ -39,8 +33,7 @@
 						</div>
 					</div>
 				</div>
-        -->
-        <!--
+
 				<div class="item">
 					<div class="container">
 						<div id="slide3" class="masonry">
@@ -56,7 +49,6 @@
 						</div>
 					</div>
 				</div>
-      -->
 
 			</div>
 		</div>
