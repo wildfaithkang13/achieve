@@ -8,15 +8,18 @@
               <% num = 1 %>
               <% sum = str + num.to_s%>
             <!-- ここから -->
-            <% @users.each_slice(3) do |slice| %>
-						<!--<div id="slide1" class="masonry">-->
+            <!--<% @users.each_slice(3) do |slice| %>-->
+            <% @users.each_slice(3).with_index do |slice, i| %>
+                <h1><%= i + 1 %></h1>
               <% slice.each do |user| %>
+              <!--<div id="slide1" class="masonry">-->
               <div id="<%= sum %>" class="masonry">
 						    <div class="post-box col-lg-4 col-md-4 col-sm-4">
 						    	<!--<img class="img-responsive img-thumbnail" src="http://i.imgur.com/ylMPudK.gif">-->
                   <h1>あああ</h1>
 						    </div>
 						</div>
+            <% end %>
             <% end %>
             <% end %>
             <!-- ここまで -->
