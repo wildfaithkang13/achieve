@@ -1,0 +1,64 @@
+<!--
+取得元：https://www.bootply.com/xuv9LtMjdH
+-->
+
+<!--
+<div class="container">
+  <h2>ユーザー</h2>
+  <% @users.each do |user| %>
+      <div class="container-child col-md-4 col-sm-6 col-xs-6 ">
+        <div class="container-fluid bg-info">
+            <div class="card">
+            <%= link_to profile_img(user), user_path(user),:class => "card-img-top", :alt => "Card image cap" %>
+
+              <div class="card-block">
+                <h4 class="card-title"><%= user.email %></h4>
+                <% if user.id != current_user.id %>
+                    <div class="item">
+                      <%= link_to user.name, user %>
+                      <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+                    </div>
+                    <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %>
+                <% end %>
+              </div>
+          </div>
+        </div>
+      </div>
+ <% end %>
+</div>
+<%= link_to "トップ画面にもどる", root_path %>
+-->
+<!--
+<div class="navbar-wrapper">
+	    <div id="home" class="header">
+							<% @users.each_with_index do |user, i| %>
+						    <div class="post-box col-lg-4 col-md-4 col-sm-4">
+									<%= link_to profile_img(user), user_path(user),:class => "card-img-top", :alt => "Card image cap"%>
+
+									<div class="card-block">
+		                <h4 class="card-title"><%= user.email %></h4>
+		                <% if user.id != current_user.id %>
+		                    <div class="item">
+													<h1><%= "#{i}番目" %></h1>
+		                      <%= link_to user.name, user %>
+		                      <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+		                    </div>
+		                    <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %>
+		                <% end %>
+		              </div>
+						    </div>
+							<% end %>
+							<% end %>
+						</div>
+					</div>
+<%= link_to "トップ画面にもどる", root_path %>
+-->
+<div class="container">
+	<% @users.each_slice(3) do |slice| %>
+		<!--
+  	<div class="gallery">-->
+    	<!--<% slice.each do |image| %>-->
+			<!--<#% end %>-->
+  	<!--</div>-->
+	<% end %>
+</div>
