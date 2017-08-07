@@ -1,7 +1,8 @@
 <div class="container">
   <h2>ユーザー</h2>
   <% @users.each do |user| %>
-      <div class="container-child col-md-4 col-sm-6 col-xs-6 ">
+      <!--<div class="container-child col-md-4 col-sm-6 col-xs-6 ">-->
+      <div class="container-child col-md-5 col-sm-6 col-xs-6 ">
         <div class="container-fluid bg-info"><br>
           <div class="gallery">
             <%= link_to profile_img(user), user_path(user),:class => "card-img-top", :alt => "Card image cap" %>
