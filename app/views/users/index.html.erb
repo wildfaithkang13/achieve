@@ -3,7 +3,7 @@
   <% @users.each do |user| %>
       <div class="container-child col-md-4 col-sm-6 col-xs-6 ">
         <div class="container-fluid bg-info",style="margin-bottom : 15px"><br>
-          <div class="gallery">
+          <!--<div class="gallery">-->
             <%= link_to profile_img(user), user_path(user),:class => "card-img-top", :alt => "Card image cap" %>
                 <h4 class="card-title"><%= user.email %></h4>
                 <% if user.id != current_user.id %>
@@ -13,7 +13,7 @@
                     </div>
                     <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %>
                 <% end %>
-          </div>
+          <!--</div>-->
         </div>
       </div>
  <% end %>
