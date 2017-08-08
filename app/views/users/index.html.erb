@@ -2,7 +2,8 @@
   <h2>ユーザー</h2>
   <% @users.each do |user| %>
       <div class="container-child col-md-4 col-sm-6 col-xs-6 ">
-        <div class="container-fluid bg-info" style="margin-bottom : 15px"><br>
+        <!-- class名 Class名と設定することができる-->
+        <div class="container-fluid bg-info users_pictures_margin"><br>
           <!--<div class="gallery">-->
             <%= link_to profile_img(user), user_path(user),:class => "card-img-top", :alt => "Card image cap" %>
                 <h4 class="card-title"><%= user.email %></h4>
