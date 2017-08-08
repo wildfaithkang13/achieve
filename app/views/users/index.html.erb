@@ -1,4 +1,9 @@
   <h2>ユーザー</h2>
+
+  <div class="container">
+    <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+
+
   <% @users.each do |user| %>
       <div class="container-child col-md-4 col-sm-6 col-xs-6 ">
         <!-- class名 Class名と設定することができる-->
@@ -16,6 +21,11 @@
                 <% end %>
         </div>
       </div>
- <% end %><br>
- <hr>
+ <% end %>
+
+
+</div>
+</div>
+
+
 <%= link_to "トップ画面にもどる", root_path %>
